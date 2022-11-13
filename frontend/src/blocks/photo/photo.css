@@ -1,0 +1,8 @@
+.photo {
+    margin-top: 34px; 
+}
+@media screen and (min-width:637px) and (max-width:100vw) {
+    .photo{
+        margin-top: 50px;
+    }
+}

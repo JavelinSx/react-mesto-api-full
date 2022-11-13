@@ -1,0 +1,19 @@
+.photo__item-delete{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    background: transparent;
+    background-image: url(../../../image/basket-icon.svg);
+    background-repeat: no-repeat;
+    border: none;
+    height: 19px;
+    width: 18px;
+    transition: opacity 1s ease;
+}
+
+.photo__item-delete:hover{
+    cursor: pointer;
+    opacity: .6;
+}

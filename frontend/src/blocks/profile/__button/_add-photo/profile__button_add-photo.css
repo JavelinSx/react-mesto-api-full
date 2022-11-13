@@ -1,0 +1,27 @@
+.profile__button_add-photo{
+    padding: 0;
+    width: 280px;
+    height: 50px;
+    border: 2px solid #FFFFFF;
+    background-image: url(../../../../image/Vector-mini.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: inherit;
+    transition: opacity 1s ease;
+}
+.profile__button_add-photo:hover{
+    cursor: pointer;
+    opacity: .6;
+}
+
+@media screen and (min-width:637px) and (max-width:100vw) {
+
+    .profile__button_add-photo{
+        background-image: url(../../../../image/Vector.svg);
+        width: 150px;
+        height: 50px;
+        grid-column: 2;
+        justify-self: flex-end;
+    }
+
+}

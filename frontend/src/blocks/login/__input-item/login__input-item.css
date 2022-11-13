@@ -1,0 +1,16 @@
+.login__input-item{
+
+}
+.login__input-item:first-child{
+    padding-bottom: 30px;
+}
+.login__input-item:last-child{
+    padding-bottom: 170px;
+}
+@media screen and (min-width:637px) and (max-width:100vw) {
+
+    .login__input-item:last-child {
+        padding-bottom: 216px;
+    }
+
+}

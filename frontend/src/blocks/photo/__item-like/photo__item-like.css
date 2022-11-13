@@ -1,0 +1,16 @@
+.photo__item-like {
+    background-image: url(../../../image/like.svg);
+    background-repeat: no-repeat;
+    background-color: inherit;
+    border: none;
+    height: 19px;
+    width: 22px;
+    transition: opacity 1s ease;
+}
+.photo__item-like:hover{
+    cursor: pointer;
+    opacity: .6;
+}
+.photo__item-like:active{
+    background-image: url(../../../image/black-like.svg);
+}

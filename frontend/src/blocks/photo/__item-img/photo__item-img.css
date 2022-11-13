@@ -1,0 +1,10 @@
+.photo__item-img {
+    width: 282px;
+    height: 282px;
+    border-top-left-radius: 3%;
+    border-top-right-radius: 3%;
+    object-fit:cover;
+}
+.photo__item-img:hover{
+    cursor: pointer;
+}

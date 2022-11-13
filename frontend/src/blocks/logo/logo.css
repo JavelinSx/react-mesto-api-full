@@ -1,0 +1,11 @@
+.logo {
+    background-color: #000;
+    margin: 0;
+    transition: opacity 1s ease;
+    border: none;
+}
+.logo:hover{
+    cursor: pointer;
+    opacity: .6;
+    
+}

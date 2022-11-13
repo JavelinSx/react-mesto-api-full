@@ -1,0 +1,26 @@
+.photo__item {
+    position: relative;
+    margin: 0;
+    margin-bottom: 20px;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+    border-bottom-left-radius: 3%;
+    border-bottom-right-radius: 3%;
+    background-color: #fff;
+    justify-self: center;
+    width: 282px;
+    display: flex;
+    flex-direction: column;
+    
+}
+@media screen and (min-width:637px) and (max-width:930px) {
+
+    .photo__item{
+        display: grid;
+        justify-self: end;
+    }
+    .photo__item:nth-child(2n){
+        justify-self: start;
+    }
+
+}

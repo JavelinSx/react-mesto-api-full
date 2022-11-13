@@ -1,0 +1,8 @@
+.photo__description{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 14px 20px 21px;
+    max-height: 79px;
+}

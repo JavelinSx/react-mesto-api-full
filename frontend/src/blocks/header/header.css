@@ -1,0 +1,27 @@
+.header {
+    width: 320px;
+    border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-top: 40px;
+
+}
+
+@media screen and (min-width:637px) and (max-width:930px) {
+
+    .header {
+        width: 586px;
+        flex-direction: row;
+    }
+
+}
+@media screen and (min-width:931px) and (max-width:100vw) {
+
+    .header {
+        width: 880px;
+        flex-direction: row;
+    }
+
+}

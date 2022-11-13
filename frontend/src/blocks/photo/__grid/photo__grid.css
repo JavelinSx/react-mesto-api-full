@@ -1,0 +1,24 @@
+.photo__grid {
+    padding-inline-start: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+@media screen and (min-width:637px) and (max-width:930px) {
+
+    .photo__grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 17px;
+    }
+
+}
+@media screen and (min-width:931px) and (max-width:100vw) {
+
+    .photo__grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 17px;
+    }
+
+}
