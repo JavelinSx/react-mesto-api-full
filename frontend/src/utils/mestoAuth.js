@@ -7,9 +7,10 @@ const headers = {
 
 const _parseResponse = (res) => {
   if (res.ok) {
+    console.log(res)
     return res.json();
   }
-  return Promise.reject(`${res.status}`);
+  return Promise.reject(console.log(res));
 };
 
 const _request = ({ url, options }) => {
