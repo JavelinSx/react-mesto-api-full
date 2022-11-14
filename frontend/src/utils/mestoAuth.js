@@ -19,7 +19,7 @@ const _request = ({ url, options }) => {
 
 export const register = (email, password) => {
   return _request({
-    url: `${BASE_URL}/sign-up`,
+    url: `${BASE_URL}/signup`,
     options: {
       method: "POST",
       headers: headers,
@@ -31,7 +31,7 @@ export const register = (email, password) => {
 
 export const login = (email, password) => {
   return _request({
-    url: `${BASE_URL}/sign-in`,
+    url: `${BASE_URL}/signin`,
     options: {
       method: "POST",
       headers: headers,
