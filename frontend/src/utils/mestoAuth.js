@@ -30,7 +30,7 @@ export const register = (email, password) => {
 
 export const login = (email, password) => {
   return _request({
-    url: `/sign-in`,
+    url: `${BASE_URL}/sign-in`,
     options: {
       method: "POST",
       headers: headers,
