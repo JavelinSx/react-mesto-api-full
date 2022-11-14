@@ -177,7 +177,6 @@ function App() {
       setEmail(email)
       setLoggedIn(true)
       history.push('/')
-      console.log(res);
     })
     .catch((err) => {
       console.log(err)
@@ -189,7 +188,7 @@ function App() {
     register(email, password)
     .then((res) => {
       if(res.data.email){
-        history.push('/sign-in')
+        history.push('/signin')
         setIconMessageToolTip(trueIcon)
         setMessageToolTip('Вы успешно зарегистрировались!')
       }
@@ -205,24 +204,20 @@ function App() {
   }
 
   useEffect(() => {
-    const token = localStorage.getItem('jwt')
-    if(token){
-      checkToken(token)
-      .then((res) => {
-          setLoggedIn(true)
-          setEmail(res.data.email)
-          history.push('/')
-    
+    if(loggedIn){
+      api.getUserInfo()
+      .then((data)=>{
+        setLoggedIn(true)
+        setCurrentUser(data)
       })
-      .catch((err) => {
-        console.log(err)
+      .catch(()=>{
+        setLoggedIn(false)
       })
     }
   },[history])
 
   function logOut() {
-    localStorage.removeItem('jwt')
-    history.push('/sign-in')
+    history.push('/signin')
     setLoggedIn(false)
   }
 

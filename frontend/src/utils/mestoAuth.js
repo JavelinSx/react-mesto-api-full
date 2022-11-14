@@ -1,16 +1,18 @@
 export const BASE_URL = "https://api.javelin.nomoredomains.icu";
 
 const headers = {
-  Accept: "application/json",
   "Content-Type": "application/json",
+  Accept: "application/json",
+  Origin: "https://javelin.nomoredomains.icu"
 };
 
 const _parseResponse = (res) => {
+
   if (res.ok) {
     console.log(res)
     return res.json();
   }
-  return Promise.reject(console.log(res));
+  return Promise.reject(`${res.status}`);
 };
 
 const _request = ({ url, options }) => {
