@@ -1,4 +1,4 @@
-export const BASE_URL = "api.javelin.nomoredomains.icu";
+export const BASE_URL = "https://api.javelin.nomoredomains.icu";
 
 const headers = {
   Accept: "application/json",
