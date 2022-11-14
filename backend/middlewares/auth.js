@@ -10,6 +10,7 @@ module.exports.auth = (req, res, next) => {
   try {
     payload = jwt.verify(token, NODE_ENV === 'production' ? JWT_SECRET : TOKEN_DEV);
   } catch (err) {
+    console.log(token)
     next(new BadAuthError('Необходима авторизация'));
   }
 
