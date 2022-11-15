@@ -51,7 +51,7 @@ function Main({
                 onCardClick={onCardClick}
                 onCardLike={onCardLike}
                 onCardDelete={onCardDelete}
-                key={card._id}
+                key={card.id}
               >
               </Card>
             );
