@@ -12,13 +12,13 @@ function Header({ loggedIn, email, logOut }) {
         <img src={logo} alt="Лого" className="logo__img"></img>
       </button>
 
-      {location.pathname === "/sign-in" && (
-        <Link to="/sign-up" className="header__link">
+      {location.pathname === "/signin" && (
+        <Link to="/signup" className="header__link">
           Регистрация
         </Link>
       )}
-      {location.pathname === "/sign-up" && (
-        <Link to="/sign-in" className="header__link">
+      {location.pathname === "/signup" && (
+        <Link to="/signin" className="header__link">
           Войти
         </Link>
       )}
