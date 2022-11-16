@@ -62,7 +62,6 @@ function App() {
       api
       .getInitialCards()
       .then((cards) => {
-        console.log(cards)
         setLoggedIn(true);
         setCards(cards)
       })
