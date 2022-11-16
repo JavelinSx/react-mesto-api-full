@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Switch, Route, useHistory } from "react-router-dom";
-import { register, login, checkToken } from "../utils/mestoAuth";
+import { register, login, logout } from "../utils/mestoAuth";
 
 import trueIcon from '../image/true-reg.svg'
 import falseIcon from '../image/false-reg.svg'
@@ -28,16 +28,16 @@ function App() {
   const [messageToolTip, setMessageToolTip] = useState('');
   const [iconMessageToolTip, setIconMessageToolTip] = useState('');
   const [isInfoToolTipOpen, setIsInfoToolTipOpen] = useState(false)
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
   const [selectedCard, setIsSelectedCard] = useState(null);
   const [isImagePopupOpen, setIsImagePopupOpen] = useState(false);
   const [currentUser, setCurrentUser] = useState({
-    name: "empty",
-    about: "empty",
-    avatar: "empty",
+    name: "Жак-Ив Кусто",
+    about: "Исследователь",
+    avatar: "https://pictures.s3.yandex.net/resources/jacques-cousteau_1604399756.png",
   });
   const [cards, setCards] = useState([]);
   const history = useHistory();
@@ -58,26 +58,33 @@ function App() {
   }, [isOpen]) 
 
   useEffect(() => {
-    api
+    if(loggedIn){
+      api
       .getInitialCards()
-      .then((cards) => setCards(cards))
+      .then((cards) => {
+        setLoggedIn(true);
+        setCards(cards)
+      })
       .catch((e) => {
+        setLoggedIn(false);
         console.log(e);
       });
-
-  }, []);
+    }
+  }, [loggedIn]);
 
   useEffect(() => {
-    api
+    if(loggedIn){
+      api
       .getUserInfo()
       .then((user) => {
         setCurrentUser(user);
       })
       .catch((e) => {
+        setLoggedIn(false);
         console.log(e);
       });
-
-  }, []);
+    }
+  }, [loggedIn]);
 
   useEffect(() => {
     if (loggedIn) {
@@ -112,6 +119,7 @@ function App() {
     api
       .addCard(name, link)
       .then((newCard) => {
+        
         setCards([newCard, ...cards]);
         closeAllPopups();
       })
@@ -187,7 +195,7 @@ function App() {
   function onRegister(email, password) {
     register(email, password)
     .then((res) => {
-      if(res.data.email){
+      if(res.email){
         history.push('/signin')
         setIconMessageToolTip(trueIcon)
         setMessageToolTip('Вы успешно зарегистрировались!')
@@ -203,22 +211,15 @@ function App() {
     )
   }
 
-  useEffect(() => {
-    if(loggedIn){
-      api.getUserInfo()
-      .then((data)=>{
-        setLoggedIn(true)
-        setCurrentUser(data)
-      })
-      .catch(()=>{
-        setLoggedIn(false)
-      })
-    }
-  },[history])
-
   function logOut() {
-    history.push('/signin')
-    setLoggedIn(false)
+    logout()
+    .then(()=>{
+      history.push('/signin')
+      setLoggedIn(false)
+    })
+    .catch((err) => {
+      console.log(err.message)
+    })
   }
 
   return (
@@ -247,11 +248,11 @@ function App() {
             
           </ProtectedRoute>
 
-          <Route path="/sign-in">
+          <Route path="/signin">
               <Login onLogin={onLogin} />
           </Route>
 
-          <Route path="/sign-up">
+          <Route path="/signup">
             <Register onRegister={onRegister} />
           </Route>
 

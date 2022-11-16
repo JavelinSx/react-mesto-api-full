@@ -12,7 +12,7 @@ function Main({
   onCardDelete,
 }) {
   const userContext = useContext(CurrentUserContext);
-
+  console.log(cards)
   return (
     <section className="main">
       <div className="profile">

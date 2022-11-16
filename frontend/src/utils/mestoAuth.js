@@ -1,9 +1,9 @@
-export const BASE_URL = "https://api.javelin.nomoredomains.icu";
+export const BASE_URL = "api.javelin.nomoredomains.icu";
 
 const headers = {
   "Content-Type": "application/json",
   Accept: "application/json",
-  Origin: "https://javelin.nomoredomains.icu"
+  Origin: "api.javelin.nomoredomains.icu"
 };
 
 const _parseResponse = (res) => {
@@ -43,16 +43,13 @@ export const login = (email, password) => {
   });
 };
 
-export const checkToken = (token) => {
+export const logout = () => {
   return _request({
-    url: `${BASE_URL}/users/me`,
+    url: `${BASE_URL}/signout`,
     options: {
       method: "GET",
       credentials: "include",
-      headers: {
-        ...headers,
-        token: token, 
-      },
+      headers: headers
     },
   });
 };
