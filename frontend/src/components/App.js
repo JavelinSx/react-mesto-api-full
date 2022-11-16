@@ -67,7 +67,7 @@ function App() {
       })
       .catch((e) => {
         setLoggedIn(false);
-        console.log(e);
+        console.log('Отсутствует или истёк срок действия Cookie, необходимо войти в систему');
       });
     }
   }, [loggedIn]);
@@ -81,7 +81,7 @@ function App() {
       })
       .catch((e) => {
         setLoggedIn(false);
-        console.log(e);
+        console.log('Отсутствует или истёк срок действия Cookie, необходимо войти в систему');
       });
     }
   }, [loggedIn]);
