@@ -1,9 +1,9 @@
-export const BASE_URL = "api.javelin.nomoredomains.icu";
+export const BASE_URL = "https://api.javelin.nomoredomains.icu";
 
 const headers = {
   "Content-Type": "application/json",
   Accept: "application/json",
-  Origin: "javelin.nomoredomains.icu"
+  Origin: "https://javelin.nomoredomains.icu"
 };
 
 const _parseResponse = (res) => {
