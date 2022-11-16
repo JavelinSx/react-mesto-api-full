@@ -119,7 +119,6 @@ function App() {
     api
       .addCard(name, link)
       .then((newCard) => {
-        
         setCards([newCard, ...cards]);
         closeAllPopups();
       })
@@ -156,7 +155,6 @@ function App() {
   function handleUpdateUser(name, about) {
     api
       .editUserInfo(name, about)
-      
       .then((userUpdate) => {
         setCurrentUser(userUpdate)
         closeAllPopups();
