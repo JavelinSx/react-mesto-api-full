@@ -4,13 +4,8 @@ function Card({ card, onCardClick, onCardLike, onCardDelete }) {
   const userContext = useContext(CurrentUserContext);
   const isOwn = card.owner === userContext._id;
   const cardDeleteButtonClassName = `photo__item-delete ${isOwn ? "photo__item-delete_visible" : "photo__item-delete_hidden"}`;
-  const isLiked = card.likes.some((like) => {
-    // eslint-disable-next-line no-unused-expressions
-    like._id === userContext._id
-    console.log(like)
-  });
-  console.log(card)
-  console.log(isLiked)
+  const isLiked = card.likes.some((like) =>  like === userContext._id);
+
   const cardLikeButtonClassName = `photo__item-like ${isLiked ? "photo__item-like_active" : ""}`;
 
   const handleCardClick = () => {
