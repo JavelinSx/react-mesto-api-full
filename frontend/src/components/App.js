@@ -78,6 +78,7 @@ function App() {
       .getUserInfo()
       .then((user) => {
         setCurrentUser(user);
+        console.log(user)
       })
       .catch((e) => {
         setLoggedIn(false);
