@@ -1,8 +1,9 @@
-const { NODE_ENV, JWT_SECRET } = process.env;
 const jwt = require('jsonwebtoken');
 const BadAuthError = require('../errors/bad_auth');
 const { TOKEN_DEV } = require('../utils/const');
+require('dotenv').config();
 
+const { NODE_ENV, JWT_SECRET } = process.env;
 module.exports.auth = (req, res, next) => {
   const { token } = req.cookies;
   let payload;
