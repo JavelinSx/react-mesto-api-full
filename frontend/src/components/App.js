@@ -24,7 +24,6 @@ import { CurrentUserContext } from "../contexts/CurrentUserContext";
 import { api } from "../utils/utils";
 function App() {
 
-  const [email, setEmail] = useState('')
   const [messageToolTip, setMessageToolTip] = useState('');
   const [iconMessageToolTip, setIconMessageToolTip] = useState('');
   const [isInfoToolTipOpen, setIsInfoToolTipOpen] = useState(false)
@@ -181,7 +180,6 @@ function App() {
   function onLogin(email, password) {
     login(email,password)
     .then((res) => {
-      setEmail(email)
       setLoggedIn(true)
       history.push('/')
     })
@@ -226,7 +224,6 @@ function App() {
       <CurrentUserContext.Provider value={currentUser}>
 
         <Header 
-          email={email} 
           loggedIn={loggedIn} 
           logOut={logOut}/>
 
