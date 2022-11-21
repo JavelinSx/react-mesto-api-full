@@ -182,7 +182,6 @@ function App() {
     .then((res) => {
       setLoggedIn(true)
       history.push('/')
-      console.log(process.env)
     })
     .catch((err) => {
 
