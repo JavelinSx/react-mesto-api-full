@@ -182,9 +182,10 @@ function App() {
     .then((res) => {
       setLoggedIn(true)
       history.push('/')
+      console.log(process.env)
     })
     .catch((err) => {
-      console.log(process.env.JWT_SECRET)
+
       console.log(err)
     })
 
