@@ -5,9 +5,8 @@ require('dotenv').config();
 module.exports.auth = (req, res, next) => {
   const { token } = req.cookies;
   let payload;
-  const { NODE_ENV = 'development', JWT_SECRET = 'some-secret-key' } = process.env;
-  console.log(NODE_ENV);
-  console.log(JWT_SECRET);
+  const { JWT_SECRET = 'some-secret-key' } = process.env;
+
   try {
     payload = jwt.verify(token, JWT_SECRET);
   } catch (err) {
