@@ -47,7 +47,7 @@ app.use(cookieParser());
 app.use(limiter);
 app.use(helmet());
 app.use('/', router);
-
+console.log(process.env);
 app.use(errorLogger);
 app.use(errors());
 app.use(handlerErrors);
