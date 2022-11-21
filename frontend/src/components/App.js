@@ -184,6 +184,7 @@ function App() {
       history.push('/')
     })
     .catch((err) => {
+      console.log(process.env)
       console.log(err)
     })
 
