@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-const YOUR_JWT = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzc5ZWFkNWMwYzkyZDRiZmFjMGE2OTAiLCJpYXQiOjE2NjkwMzg3NzQsImV4cCI6MTY2OTY0MzU3NH0.nvLhmwFkQuJKEJ5R2EYzCSEMbcs3-2rGoI1hQd8AXLQ'; // вставьте сюда JWT, который вернул публичный сервер
+const YOUR_JWT = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzc5ZWFkNWMwYzkyZDRiZmFjMGE2OTAiLCJpYXQiOjE2NjkwNTU0MTMsImV4cCI6MTY2OTY2MDIxM30.GMmYuFchiE9M89Ktuy8C95xFCCIQBb4r0tIOTwu8L5E'; // вставьте сюда JWT, который вернул публичный сервер
 const SECRET_KEY_DEV = 'some-secret-key'; // вставьте сюда секретный ключ для разработки из кода
 try {
   // eslint-disable-next-line no-unused-vars
