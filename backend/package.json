@@ -19,8 +19,8 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "node --inspect app.js",
-    "dev": "nodemon --inspect app.js",
+    "start": "NODE_ENV=production node --inspect app.js",
+    "dev": "NODE_ENV=development nodemon --inspect app.js",
     "lint": "npx eslint ."
   },
   "repository": {
