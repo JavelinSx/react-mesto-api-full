@@ -22,7 +22,6 @@ import AddPlacePopup from "./AddPlacePopup";
 
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 import { api } from "../utils/utils";
-require('dotenv').config();
 function App() {
 
   const [messageToolTip, setMessageToolTip] = useState('');
