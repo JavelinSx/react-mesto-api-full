@@ -22,6 +22,7 @@ import AddPlacePopup from "./AddPlacePopup";
 
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 import { api } from "../utils/utils";
+require('dotenv').config();
 function App() {
 
   const [messageToolTip, setMessageToolTip] = useState('');
@@ -184,7 +185,7 @@ function App() {
       history.push('/')
     })
     .catch((err) => {
-      console.log(process.env)
+      console.log(process.env.JWT_SECRET)
       console.log(err)
     })
 
