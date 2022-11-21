@@ -7,6 +7,7 @@ module.exports.auth = (req, res, next) => {
   const { token } = req.cookies;
   const { NODE_ENV = 'development', JWT_SECRET = TOKEN_DEV } = process.env;
   let payload;
+  console.log("hello");
   console.log(JWT_SECRET);
   console.log(TOKEN_DEV);
   try {
