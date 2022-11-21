@@ -7,11 +7,11 @@ module.exports.auth = (req, res, next) => {
   const { token } = req.cookies;
   const { NODE_ENV = 'development', JWT_SECRET = TOKEN_DEV } = process.env;
   let payload;
-
+  console.log(JWT_SECRET);
+  console.log(TOKEN_DEV);
   try {
     payload = jwt.verify(token, NODE_ENV === 'production' ? JWT_SECRET : TOKEN_DEV);
-    console.log(JWT_SECRET);
-    console.log(TOKEN_DEV);
+
     console.log(payload);
   } catch (err) {
     next(new BadAuthError('Необходима авторизация'));
