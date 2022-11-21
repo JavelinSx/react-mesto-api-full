@@ -6,7 +6,6 @@ try {
   // eslint-disable-next-line no-unused-vars
   const payload = jwt.verify(YOUR_JWT, SECRET_KEY_DEV);
   console.log('\x1b[31m%s\x1b[0m', 'Надо исправить. В продакшне используется тот же секретный ключ, что и в режиме разработки.');
-  console.log(process.env);
 } catch (err) {
   if (err.name === 'JsonWebTokenError' && err.message === 'invalid signature') {
     console.log('\x1b[32m%s\x1b[0m', 'Всё в порядке. Секретные ключи отличаются');
