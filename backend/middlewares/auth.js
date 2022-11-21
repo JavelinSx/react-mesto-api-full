@@ -3,11 +3,10 @@ const BadAuthError = require('../errors/bad_auth');
 const { TOKEN_DEV } = require('../utils/const');
 require('dotenv').config();
 
-const { NODE_ENV, JWT_SECRET } = process.env;
 module.exports.auth = (req, res, next) => {
   const { token } = req.cookies;
   let payload;
-
+  const { NODE_ENV = 'development', JWT_SECRET = 'some-secret-key' } = process.env;
   try {
     payload = jwt.verify(token, NODE_ENV === 'production' ? JWT_SECRET : TOKEN_DEV);
     console.log(NODE_ENV);
